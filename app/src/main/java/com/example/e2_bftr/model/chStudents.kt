@@ -13,7 +13,7 @@ data class chStudents(
     var house: String?,
     @SerializedName("image")
     var icon: String?,
-    @SerializedName("gender")
+   @SerializedName("gender")
     var genero: String?,
     @SerializedName("dateOfBirth")
     var cumple: String?,

@@ -5,8 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e2_bftr.adapters.StudentsAdapter
 import com.example.e2_bftr.databinding.ActivityEstudiantesListBinding
-import com.example.e2_bftr.databinding.ActivityMenuBinding
 import com.example.e2_bftr.model.chStudents
 import com.example.e2_bftr.network.CharacterApi
 import com.example.e2_bftr.network.RetrofitService
@@ -32,11 +33,18 @@ class EstudiantesList : AppCompatActivity() {
                 call: Call<ArrayList<chStudents>>,
                 response: Response<ArrayList<chStudents>>
             ) {
-               binding.pbConexion.visibility = View.GONE
-                Toast.makeText(this@EstudiantesList,"CONECTADO",Toast.LENGTH_SHORT).show()
-                Log.d(Constants.LOGTAG, "SERVER: ${response.toString()}")
+                if(response.isSuccessful){
+                    binding.pbConexionStd.visibility = View.GONE
 
-                Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
+                    Toast.makeText(this@EstudiantesList,"CONECTADO",Toast.LENGTH_SHORT).show()
+                    Log.d(Constants.LOGTAG, "SERVER: ${response.toString()}")
+
+                    Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
+
+                    binding.rvListaStudent.layoutManager = LinearLayoutManager(this@EstudiantesList)
+
+                    binding.rvListaStudent.adapter = StudentsAdapter(this@EstudiantesList, response.body()!!)
+                }
             }
 
             override fun onFailure(call: Call<ArrayList<chStudents>>, t: Throwable) {
