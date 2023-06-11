@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/maqueta_fondoazul"
+    tools:context=".StaffDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa_bold"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    tools:text="Nombre" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:riv_corner_radius="10dp"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tvGenero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Genero" />
+
+                <TextView
+                    android:id="@+id/tvCumpleaños"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Fecha_Cumpleaños" />
+
+                <TextView
+                    android:id="@+id/tvMago"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Es mago?" />
+
+                <TextView
+                    android:id="@+id/tvSangre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Ascendencia" />
+
+                <TextView
+                    android:id="@+id/tvPatronus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Patronus" />
+
+                <TextView
+                    android:id="@+id/tvVivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aref_ruqaa"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:text="Esta vivo?" />
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pbConexionStdD"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

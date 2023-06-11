@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">E2_BFTR</string>
+    <string name="app_name">WIKI SNITCH</string>
     <string name="creador">Creado por: Brayan Tenorio Ruiz</string>
     <string name="version">Version 2.0</string>
     <string name="decision">Selecciona una opción:</string>
     <string name="estudiantes">Estudiantes</string>
-    <string name="staf">Personal</string>
+    <string name="staf">Maestros</string>
 </resources>

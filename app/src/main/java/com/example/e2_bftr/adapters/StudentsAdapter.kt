@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.e2_bftr.databinding.CharacterElementBinding
 import com.example.e2_bftr.model.chStudents
 
-class StudentsAdapter(private var context: Context, private var student: ArrayList<chStudents>):RecyclerView.Adapter<StudentsAdapter.ViewHolderStd>(){
+class StudentsAdapter(private var context: Context, private var student: ArrayList<chStudents>, private var clickListener: (chStudents) -> Unit):RecyclerView.Adapter<StudentsAdapter.ViewHolderStd>(){
 
     class ViewHolderStd(view: CharacterElementBinding): RecyclerView.ViewHolder(view.root){
         val ivIcon = view.ivIcon
@@ -35,6 +35,7 @@ class StudentsAdapter(private var context: Context, private var student: ArrayLi
         //Para programar los eventos click a todos los elementos del ViewHolderStd
         // (tambien se podria elegir un elemento especifico cambiando itemView por el item deseado)
         holder.itemView.setOnClickListener{
+            clickListener(student[position])
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.e2_bftr
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,7 +44,8 @@ class EstudiantesList : AppCompatActivity() {
 
                     binding.rvListaStudent.layoutManager = LinearLayoutManager(this@EstudiantesList)
 
-                    binding.rvListaStudent.adapter = StudentsAdapter(this@EstudiantesList, response.body()!!)
+                    binding.rvListaStudent.adapter = StudentsAdapter(this@EstudiantesList, response.body()!!
+                        ,{selectStudent: chStudents -> characterClicked(selectStudent)})
                 }
             }
 
@@ -52,5 +54,16 @@ class EstudiantesList : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun characterClicked(chstudents: chStudents){
+        Toast.makeText(this,"Click en ${chstudents.name}",Toast.LENGTH_SHORT).show()
+
+        val bundle = Bundle()
+        bundle.putString("id",chstudents.id)
+
+        val intent = Intent(this,EstudiantesDetails::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }

@@ -12,17 +12,5 @@ data class chStaff(
     @SerializedName("house")
     var house: String?,
     @SerializedName("image")
-    var icon: String?,
-    @SerializedName("gender")
-    var genero: String?,
-    @SerializedName("dateOfBirth")
-    var cumple: String?,
-    @SerializedName("wizard")
-    var wizard: Boolean?,
-    @SerializedName("ancestry")
-    var ancestry: String?,
-    @SerializedName("patronus")
-    var patronus: String?,
-    @SerializedName("alive")
-    var alive: Boolean?
+    var icon: String?
 )

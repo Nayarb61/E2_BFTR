@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.e2_bftr.databinding.CharacterElementBinding
+import com.example.e2_bftr.databinding.StfCharacterElementBinding
 import com.example.e2_bftr.model.chStaff
 
-class StaffAdapter(private var context: Context, private var staf: ArrayList<chStaff>): RecyclerView.Adapter<StaffAdapter.StfViewHolder>() {
+class StaffAdapter(private var context: Context, private var staf: ArrayList<chStaff>, private var clickListener: (chStaff) -> Unit): RecyclerView.Adapter<StaffAdapter.StfViewHolder>() {
 
-    class StfViewHolder(view: CharacterElementBinding):RecyclerView.ViewHolder(view.root) {
+    class StfViewHolder(view: StfCharacterElementBinding):RecyclerView.ViewHolder(view.root) {
         val ivIcon = view.ivIcon
         val tvNombre = view.tvName
         val tvActor = view.tvActor
@@ -18,7 +18,7 @@ class StaffAdapter(private var context: Context, private var staf: ArrayList<chS
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StfViewHolder {
-        val binding = CharacterElementBinding.inflate(LayoutInflater.from(context))
+        val binding = StfCharacterElementBinding.inflate(LayoutInflater.from(context))
         return StfViewHolder(binding)
     }
 
@@ -34,6 +34,7 @@ class StaffAdapter(private var context: Context, private var staf: ArrayList<chS
             .into(holder.ivIcon)
 
         holder.itemView.setOnClickListener {
+            clickListener(staf[position])
         }
     }
 }

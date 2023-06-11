@@ -11,7 +11,7 @@
         android:id="@+id/viewBackground"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/background_element"
+        android:background="@drawable/background_element_stf"
         android:paddingBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvName" />
@@ -38,7 +38,7 @@
         android:fontFamily="@font/aref_ruqaa_bold"
         android:includeFontPadding="false"
         android:paddingTop="8dp"
-        android:textColor="@android:color/holo_orange_light"
+        android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +129,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.22" />
-
 
 
 

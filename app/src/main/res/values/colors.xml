@@ -2,5 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="redHP">#C51818</color>
+    <color name="gray">#B8B6B6</color>
+    <color name="redHP">#A31A1A</color>
+    <color name="greenHP">#286e77</color>
+    <color name="elementbackStd">#810202</color>
+    <color name="elementbackStf">#19505e</color>
+    <color name="goldHP">#C69E23</color>
+    <color name="lightgoldHP">#FFFAEB</color>
 </resources>

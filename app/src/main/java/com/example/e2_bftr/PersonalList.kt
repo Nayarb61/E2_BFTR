@@ -1,5 +1,6 @@
 package com.example.e2_bftr
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +8,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e2_bftr.adapters.StaffAdapter
-import com.example.e2_bftr.adapters.StudentsAdapter
 import com.example.e2_bftr.databinding.ActivityPersonalListBinding
 import com.example.e2_bftr.model.chStaff
 import com.example.e2_bftr.network.CharacterApi
@@ -43,7 +43,8 @@ class PersonalList : AppCompatActivity() {
 
                 binding.rvListaStaff.layoutManager = LinearLayoutManager(this@PersonalList)
 
-                binding.rvListaStaff.adapter = StaffAdapter(this@PersonalList, response.body()!!)
+                binding.rvListaStaff.adapter = StaffAdapter(this@PersonalList, response.body()!!,
+                    {selectStaff: chStaff -> characterClicked(selectStaff)})
 
 
             }
@@ -53,5 +54,16 @@ class PersonalList : AppCompatActivity() {
             }
 
         })
+    }
+
+    private fun characterClicked(chStaff: chStaff){
+        Toast.makeText(this,"Click en ${chStaff.name}",Toast.LENGTH_SHORT).show()
+
+        val bundle = Bundle()
+        bundle.putString("id",chStaff.id)
+
+        val intent = Intent(this, StaffDetails::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }
