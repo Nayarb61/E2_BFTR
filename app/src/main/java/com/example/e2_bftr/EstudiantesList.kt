@@ -35,7 +35,7 @@ class EstudiantesList : AppCompatActivity() {
                 if(response.isSuccessful){
                     binding.pbConexionStd.visibility = View.GONE
 
-                    Toast.makeText(this@EstudiantesList,"CONECTADO",Toast.LENGTH_SHORT).show()
+                  //  Toast.makeText(this@EstudiantesList,"CONECTADO",Toast.LENGTH_SHORT).show()
                   //  Log.d(Constants.LOGTAG, "SERVER: ${response.toString()}")
 
                   //  Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")

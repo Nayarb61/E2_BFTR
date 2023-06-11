@@ -42,11 +42,22 @@ class EstudiantesDetails : AppCompatActivity() {
                     val studentD = student?.getOrNull(0)
 
                     binding.tvName.text = studentD?.name
-                    binding.tvPatronus.text = studentD?.patronus
-                    binding.tvSangre.text = studentD?.ancestry
-                    binding.tvGenero.text = studentD?.genero
-                    binding.tvCumpleaOs.text = studentD?.cumple
+                    binding.tvPatronus.text = getString(R.string.patronus,studentD?.patronus)
+                    binding.tvSangre.text = getString(R.string.ancestry,studentD?.ancestry)
+                    binding.tvGenero.text = getString(R.string.genero,studentD?.genero)
+                    binding.tvCumpleaOs.text = getString(R.string.cumple,studentD?.cumple)
+                    binding.tvCasa.text = getString(R.string.casa,studentD?.house)
+                    if(studentD?.mago == true){
+                        binding.tvWizard.text = getString(R.string.Esmago)
 
+                    }else{
+                        binding.tvWizard.text = getString(R.string.NoEsmago)
+                    }
+                    if (studentD?.vivo == true ){
+                        binding.tvVivo.text = getString(R.string.Esvivo)
+                    }else{
+                        binding.tvVivo.text = getString(R.string.NoESvivo)
+                    }
                     Glide.with(this@EstudiantesDetails)
                         .load(studentD?.icon)
                         .into(binding.ivIcon)

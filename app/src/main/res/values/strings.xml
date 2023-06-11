@@ -1,9 +1,20 @@
 <resources>
-    <string name="app_name">WIKI SNITCH</string>
+    <string name="app_name" translatable="false">WIKI SNITCH</string>
     <string name="creador">Creado por: Brayan Tenorio Ruiz</string>
-    <string name="version">Version 2.0</string>
+    <string name="version">Versión 2.0</string>
     <string name="decision">Selecciona una opción:</string>
     <string name="estudiantes">Estudiantes</string>
     <string name="staf">Maestros</string>
     <string name="NoConexion">Fallo en la conexión</string>
+
+    <string name="genero"> - Genero:  <b>%1$s</b>  </string>
+    <string name="cumple"> - Fecha Nacimiento: <b>%1$s</b>  </string>
+    <string name="ancestry"> - Ascendencia:    <b>%1$s</b>  </string>
+    <string name="patronus"> - Patronus:  <b>%1$s</b>  </string>
+    <string name="Esmago"> - ¿Es Mago?:    <b>Si</b>  </string>
+    <string name="NoEsmago"> - ¿Es Mago?:  <b>No</b>  </string>
+    <string name="Esvivo"> - ¿Esta vivo?:  <b>Si</b>  </string>
+    <string name="NoESvivo"> - ¿Esta vivo?:    <b>No</b>  </string>
+    <string name="casa"> - Casa:   <b>%1$s</b>  </string>
+
 </resources>

@@ -40,11 +40,22 @@ class StaffDetails : AppCompatActivity() {
                     val stafD = staf?.getOrNull(0)
 
                     binding.tvName.text = stafD?.name
-                    binding.tvPatronus.text = stafD?.patronus
-                    binding.tvSangre.text = stafD?.ancestry
-                    binding.tvGenero.text = stafD?.genero
-                    binding.tvCumpleaOs.text = stafD?.cumple
+                    binding.tvPatronus.text = getString(R.string.patronus,stafD?.patronus)
+                    binding.tvSangre.text = getString(R.string.ancestry,stafD?.ancestry)
+                    binding.tvGenero.text = getString(R.string.genero,stafD?.genero)
+                    binding.tvCumpleaOs.text = getString(R.string.cumple,stafD?.cumple)
+                    binding.tvCasa.text = getString(R.string.casa,stafD?.house)
+                    if(stafD?.mago == true){
+                        binding.tvWizard.text = getString(R.string.Esmago)
 
+                    }else{
+                        binding.tvWizard.text = getString(R.string.NoEsmago)
+                    }
+                    if (stafD?.vivo == true ){
+                        binding.tvVivo.text = getString(R.string.Esvivo)
+                    }else{
+                        binding.tvVivo.text = getString(R.string.NoESvivo)
+                    }
                     Glide.with(this@StaffDetails)
                         .load(stafD?.icon)
                         .into(binding.ivIcon)

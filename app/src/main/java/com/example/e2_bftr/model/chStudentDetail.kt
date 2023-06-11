@@ -16,6 +16,12 @@ data class chStudentDetail(
     @SerializedName("ancestry")
     var ancestry: String?,
     @SerializedName("patronus")
-    var patronus: String?
+    var patronus: String?,
+    @SerializedName("house")
+    var house: String?,
+    @SerializedName("wizard")
+    var mago: Boolean?,
+    @SerializedName("alive")
+    var vivo: Boolean?
 
 )

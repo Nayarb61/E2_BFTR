@@ -19,9 +19,6 @@
             android:name=".StaffDetails"
             android:exported="false" />
         <activity
-            android:name=".utils.StaffDetails"
-            android:exported="false" />
-        <activity
             android:name=".EstudiantesDetails"
             android:exported="false" />
         <activity

@@ -49,79 +49,93 @@
                     android:id="@+id/tvGenero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/arimo"
                     android:paddingLeft="15dp"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
+                    android:text="@string/genero"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Genero" />
+                    android:textSize="20sp" />
+
 
                 <TextView
                     android:id="@+id/tvCumpleaños"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/arimo"
                     android:paddingLeft="15dp"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
+                    android:text="@string/cumple"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Fecha_Cumpleaños" />
+                    android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/tvMago"
+                    android:id="@+id/tvCasa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/arimo"
                     android:paddingLeft="15dp"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
+                    android:text="@string/casa"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Es mago?" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvSangre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/arimo"
                     android:paddingLeft="15dp"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
+                    android:text="@string/ancestry"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Ascendencia" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvPatronus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/arimo"
                     android:paddingLeft="15dp"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
+                    android:text="@string/patronus"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Patronus" />
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvWizard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/arimo"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/Esmago"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvVivo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
+                    android:fontFamily="@font/arimo"
                     android:paddingLeft="15dp"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
                     android:paddingBottom="10dp"
+                    android:text="@string/Esvivo"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Esta vivo?" />
+                    android:textSize="20sp" />
             </LinearLayout>
         </ScrollView>
 

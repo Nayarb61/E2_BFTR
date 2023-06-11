@@ -1,11 +1,8 @@
 package com.example.e2_bftr
 
 import android.content.Intent
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.example.e2_bftr.databinding.ActivityMainBinding
 import com.example.e2_bftr.databinding.ActivityMenuBinding
 
 class Menu : AppCompatActivity() {

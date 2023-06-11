@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="creador">Creator: Brayan Tenorio Ruiz.</string>
+    <string name="version">Version 2.0</string>
+    <string name="decision">Select an option:</string>
+    <string name="estudiantes">Students</string>
+    <string name="staf">Teachers</string>
+    <string name="NoConexion">Connection failed.</string>
+    <string name="genero">- Gender: %1$s</string>
+    <string name="cumple">- Date of birth: %1$s</string>
+    <string name="ancestry">- Ancestry: %1$s</string>
+    <string name="patronus">- Patronus: %1$s</string>
+    <string name="Esmago">- Is a Magician?: Yes</string>
+    <string name="NoEsmago">- Is a Magician?: No</string>
+    <string name="Esvivo">- Is Alive?: Yes</string>
+    <string name="NoESvivo">- Is Alive?: No</string>
+    <string name="casa">- Home?: %1$s</string>
+</resources>

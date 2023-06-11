@@ -3,7 +3,6 @@ package com.example.e2_bftr
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +11,6 @@ import com.example.e2_bftr.databinding.ActivityPersonalListBinding
 import com.example.e2_bftr.model.chStaff
 import com.example.e2_bftr.network.CharacterApi
 import com.example.e2_bftr.network.RetrofitService
-import com.example.e2_bftr.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
