@@ -5,4 +5,5 @@
     <string name="decision">Selecciona una opción:</string>
     <string name="estudiantes">Estudiantes</string>
     <string name="staf">Maestros</string>
+    <string name="NoConexion">Fallo en la conexión</string>
 </resources>

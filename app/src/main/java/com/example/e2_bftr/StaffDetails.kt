@@ -24,31 +24,35 @@ class StaffDetails : AppCompatActivity() {
 
         val bundle = intent.extras
 
-        val id_Stf = bundle?.getString("id","")
+        val id = bundle?.getString("id", "")
+        val call = RetrofitService.getRetrofit().create(CharacterApi::class.java).getStaffDetail(id)
 
-        val call = RetrofitService.getRetrofit().create(CharacterApi::class.java).getStaffDetail(id_Stf)
-
-        call.enqueue(object: Callback<chStaffDetail>{
-            override fun onResponse(call: Call<chStaffDetail>, response: Response<chStaffDetail>
+        call.enqueue(object : Callback<ArrayList<chStaffDetail>> {
+            override fun onResponse(call: Call<ArrayList<chStaffDetail>>, response: Response<ArrayList<chStaffDetail>>
             ) {
                 binding.pbConexionStdD.visibility = View.GONE
-                Toast.makeText(this@StaffDetails,"CONECTADO", Toast.LENGTH_SHORT).show()
+                //   Toast.makeText(this@EstudiantesDetails,"CONECTADO", Toast.LENGTH_SHORT).show()
 
-                binding.tvName.text = response.body()!!.name
-                binding.tvGenero.text = response.body()!!.genero
-                binding.tvCumpleaOs.text = response.body()!!.cumple
-                binding.tvMago.text = response.body()!!.mago.toString()
-                binding.tvVivo.text = response.body()!!.vivo.toString()
-                binding.tvSangre.text = response.body()!!.ancestry
-                binding.tvPatronus.text = response.body()!!.patronus
+                val staf = response.body()
+                //   Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
-                Glide.with(this@StaffDetails)
-                    .load(response.body()!!.icon)
-                    .into(binding.ivIcon)
+                if (response.isSuccessful) {
+                    val stafD = staf?.getOrNull(0)
 
+                    binding.tvName.text = stafD?.name
+                    binding.tvPatronus.text = stafD?.patronus
+                    binding.tvSangre.text = stafD?.ancestry
+                    binding.tvGenero.text = stafD?.genero
+                    binding.tvCumpleaOs.text = stafD?.cumple
+
+                    Glide.with(this@StaffDetails)
+                        .load(stafD?.icon)
+                        .into(binding.ivIcon)
+                }
             }
-            override fun onFailure(call: Call<chStaffDetail>, t: Throwable) {
-                Toast.makeText(this@StaffDetails,"No hay conexión",Toast.LENGTH_SHORT).show()
+
+            override fun onFailure(call: Call<ArrayList<chStaffDetail>>, t: Throwable) {
+                Toast.makeText(this@StaffDetails,getString(R.string.NoConexion), Toast.LENGTH_SHORT).show()
             }
         })
     }

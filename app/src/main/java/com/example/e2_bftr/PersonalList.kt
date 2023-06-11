@@ -35,11 +35,11 @@ class PersonalList : AppCompatActivity() {
                 response: Response<ArrayList<chStaff>>
             ) {
                 binding.pbConexionStf.visibility = View.GONE
-                Toast.makeText(this@PersonalList,"CONECTADO", Toast.LENGTH_SHORT).show()
+            //    Toast.makeText(this@PersonalList,"CONECTADO", Toast.LENGTH_SHORT).show()
 
-                Log.d(Constants.LOGTAG, "SERVER: ${response.toString()}")
+            //    Log.d(Constants.LOGTAG, "SERVER: ${response.toString()}")
 
-                Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
+             //   Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
 
                 binding.rvListaStaff.layoutManager = LinearLayoutManager(this@PersonalList)
 
@@ -50,14 +50,14 @@ class PersonalList : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<ArrayList<chStaff>>, t: Throwable) {
-                Toast.makeText(this@PersonalList,"NO CONECTADO",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@PersonalList,getString(R.string.NoConexion),Toast.LENGTH_SHORT).show()
             }
 
         })
     }
 
     private fun characterClicked(chStaff: chStaff){
-        Toast.makeText(this,"Click en ${chStaff.name}",Toast.LENGTH_SHORT).show()
+      //  Toast.makeText(this,"Click en ${chStaff.name}",Toast.LENGTH_SHORT).show()
 
         val bundle = Bundle()
         bundle.putString("id",chStaff.id)

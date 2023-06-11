@@ -22,12 +22,12 @@ interface CharacterApi {
 
     @GET("api/character/{id}")
     fun getStudentsDetail(
-        @Path("id") id: String? = null
-    ):Call<chStudentDetail>
+        @Path("id") id: String?
+    ): Call<ArrayList<chStudentDetail>>
 
     @GET("api/character/{id}")
     fun getStaffDetail(
-        @Path("id") id: String? = null
-    ):Call<chStaffDetail>
+        @Path("id") id: String?
+    ): Call<ArrayList<chStaffDetail>>
 
 }

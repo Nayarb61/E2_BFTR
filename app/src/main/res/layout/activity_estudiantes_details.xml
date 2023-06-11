@@ -34,7 +34,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="25sp"
-                    tools:text="Title" />
+                    tools:text="Nombre" />
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:id="@+id/ivIcon"
@@ -56,7 +56,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    tools:text="Description" />
+                    tools:text="Genero" />
 
                 <TextView
                     android:id="@+id/tvCumpleaños"
@@ -69,20 +69,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    tools:text="Description" />
-
-                <TextView
-                    android:id="@+id/tvMago"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Description" />
+                    tools:text="Fecha de Nacimiento" />
 
                 <TextView
                     android:id="@+id/tvSangre"
@@ -95,7 +82,7 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    tools:text="Description" />
+                    tools:text="Ascendencia" />
 
                 <TextView
                     android:id="@+id/tvPatronus"
@@ -108,20 +95,8 @@
                     android:paddingBottom="10dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    tools:text="Description" />
+                    tools:text="Patronus" />
 
-                <TextView
-                    android:id="@+id/tvVivo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/aref_ruqaa"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    tools:text="Description" />
             </LinearLayout>
         </ScrollView>
 

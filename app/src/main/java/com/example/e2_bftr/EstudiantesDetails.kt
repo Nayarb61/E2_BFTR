@@ -7,7 +7,6 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.e2_bftr.databinding.ActivityEstudiantesDetailsBinding
 import com.example.e2_bftr.model.chStudentDetail
-import com.example.e2_bftr.model.chStudents
 import com.example.e2_bftr.network.CharacterApi
 import com.example.e2_bftr.network.RetrofitService
 import retrofit2.Call
@@ -24,30 +23,38 @@ class EstudiantesDetails : AppCompatActivity() {
         setContentView(binding.root)
 
         val bundle = intent.extras
-        val id = bundle?.getString("id", "")
 
+        val id = bundle?.getString("id", "")
         val call = RetrofitService.getRetrofit().create(CharacterApi::class.java).getStudentsDetail(id)
 
-        call.enqueue(object : Callback<chStudentDetail> {
-            override fun onResponse(call: Call<chStudentDetail>, response: Response<chStudentDetail>
+        call.enqueue(object : Callback<ArrayList<chStudentDetail>> {
+            override fun onResponse(
+                call: Call<ArrayList<chStudentDetail>>,
+                response: Response<ArrayList<chStudentDetail>>
             ) {
                 binding.pbConexionStdD.visibility = View.GONE
-                Toast.makeText(this@EstudiantesDetails, "CONECTADO", Toast.LENGTH_SHORT).show()
-                binding.tvName.text = response.body()!!.name
-                binding.tvGenero.text = response.body()!!.genero
-                binding.tvCumpleaOs.text = response.body()!!.cumple
-                binding.tvMago.text = response.body()!!.mago.toString()
-                binding.tvVivo.text = response.body()!!.vivo.toString()
-                binding.tvSangre.text = response.body()!!.ancestry
-                binding.tvPatronus.text = response.body()!!.patronus
+             //   Toast.makeText(this@EstudiantesDetails,"CONECTADO", Toast.LENGTH_SHORT).show()
 
-                Glide.with(this@EstudiantesDetails)
-                    .load(response.body()!!.icon)
-                    .into(binding.ivIcon)
+                val student = response.body()
+             //   Log.d(Constants.LOGTAG, "Datos: ${response.body().toString()}")
+
+                if (response.isSuccessful) {
+                    val studentD = student?.getOrNull(0)
+
+                    binding.tvName.text = studentD?.name
+                    binding.tvPatronus.text = studentD?.patronus
+                    binding.tvSangre.text = studentD?.ancestry
+                    binding.tvGenero.text = studentD?.genero
+                    binding.tvCumpleaOs.text = studentD?.cumple
+
+                    Glide.with(this@EstudiantesDetails)
+                        .load(studentD?.icon)
+                        .into(binding.ivIcon)
+                }
             }
 
-            override fun onFailure(call: Call<chStudentDetail>, t: Throwable) {
-                Toast.makeText(this@EstudiantesDetails, "No hay conexión", Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<ArrayList<chStudentDetail>>, t: Throwable) {
+                Toast.makeText(this@EstudiantesDetails,getString(R.string.NoConexion), Toast.LENGTH_SHORT).show()
             }
         })
     }
